@@ -7,7 +7,7 @@ RegisterCommand('callpolice', function(source)
     if not xPlayer then return end
 
     if xPlayer.job.name ~= 'ambulance' then
-        TriggerClientEvent('esx:showNotification', source, 'אין לך הרשאה להשתמש בפקודה זו')
+        TriggerClientEvent('esx:showNotification', source, 'You do not have permission to use this command')
         return
     end
 
@@ -16,7 +16,7 @@ RegisterCommand('callpolice', function(source)
         TriggerClientEvent(
             'esx:showNotification',
             source,
-            'עליך להמתין ' .. (cooldowns[source] - now) .. ' שניות לפני קריאה נוספת'
+            'You must wait ' .. (cooldowns[source] - now) .. ' seconds before calling again'
         )
         return
     end
