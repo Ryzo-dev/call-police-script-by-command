@@ -30,7 +30,7 @@ AddEventHandler('ryzo_callpolice:doMe', function()
         false
     )
 
-    ExecuteCommand('me קורא למשטרה')
+    ExecuteCommand('me Calling the Police')
 
     CreateThread(function()
         Wait(4000)
@@ -43,18 +43,18 @@ end)
 
 RegisterNetEvent('ryzo_callpolice:alertPolice')
 AddEventHandler('ryzo_callpolice:alertPolice', function(coords)
-    ESX.ShowNotification('מדא זקוק לשוטר במיקום שסומן על המפה')
+    ESX.ShowNotification('EMS needs a police officer at the location marked on the map')
 
     PlaySoundFrontend(-1, '5_Second_Timer', 'DLC_HEISTS_GENERAL_FRONTEND_SOUNDS', true)
 
     local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
-    SetBlipSprite(blip, 153)
+    setBlipSprite(blip, 153)
     SetBlipColour(blip, 1)
     SetBlipScale(blip, 1.2)
     SetBlipAsShortRange(blip, false)
 
     BeginTextCommandSetBlipName('STRING')
-    AddTextComponentString('קריאה למדא')
+    AddTextComponentString('EMS Call')
     EndTextCommandSetBlipName(blip)
 
     CreateThread(function()
